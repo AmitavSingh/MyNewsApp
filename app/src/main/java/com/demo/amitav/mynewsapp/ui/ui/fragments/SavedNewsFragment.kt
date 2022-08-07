@@ -1,4 +1,4 @@
-package com.demo.amitav.mynewsapp.ui.fragments
+package com.demo.amitav.mynewsapp.ui.ui.fragments
 
 import androidx.fragment.app.Fragment
 import com.demo.amitav.mynewsapp.R
