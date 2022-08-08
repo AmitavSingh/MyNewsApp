@@ -15,7 +15,7 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
 
 
     lateinit var viewModel: NewsViewModel
-    val args: ArticleFragmentArgs by navArgs()
+    private val args: ArticleFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,6 +27,7 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
         }
 
         fab.setOnClickListener {
+            viewModel.saveArticle(article)
             Snackbar.make(view, "Article saved successfully", Snackbar.LENGTH_SHORT).show()
         }
     }

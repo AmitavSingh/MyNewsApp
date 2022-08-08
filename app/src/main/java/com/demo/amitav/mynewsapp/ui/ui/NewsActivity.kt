@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.demo.amitav.mynewsapp.R
+import com.demo.amitav.mynewsapp.ui.database.ArticleDatabase
 import com.demo.amitav.mynewsapp.ui.repository.NewsRepository
 import com.demo.amitav.mynewsapp.ui.ui.viewmodels.NewsViewModel
 import com.demo.amitav.mynewsapp.ui.ui.viewmodels.NewsViewModelProviderFactory
@@ -28,7 +29,8 @@ class NewsActivity : AppCompatActivity() {
         val navController = navHostFragment!!.navController
         bottomNavigationView.setupWithNavController(navController = navController)
 
-        val newsRepository = NewsRepository()
+        val database = ArticleDatabase(this)
+        val newsRepository = NewsRepository(db = database)
         val viewModelProviderFactory = NewsViewModelProviderFactory(newsRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
 
