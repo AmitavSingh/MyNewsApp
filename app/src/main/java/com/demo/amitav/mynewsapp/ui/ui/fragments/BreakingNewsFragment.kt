@@ -3,8 +3,8 @@ package com.demo.amitav.mynewsapp.ui.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.demo.amitav.mynewsapp.R
@@ -14,7 +14,7 @@ import com.demo.amitav.mynewsapp.ui.ui.viewmodels.NewsViewModel
 import com.demo.amitav.mynewsapp.ui.util.Resource
 import kotlinx.android.synthetic.main.fragment_breaking_news.*
 
-class BreakingNewsFragment: Fragment(R.layout.fragment_breaking_news) {
+class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
     lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
@@ -48,6 +48,8 @@ class BreakingNewsFragment: Fragment(R.layout.fragment_breaking_news) {
                     hideProgressBar()
                     response.message?.let { message ->
                         Log.e(TAG, "An error occured: $message")
+                        Toast.makeText(activity, "An error occured: $message", Toast.LENGTH_LONG)
+                            .show()
                     }
                 }
                 is Resource.Loading -> {

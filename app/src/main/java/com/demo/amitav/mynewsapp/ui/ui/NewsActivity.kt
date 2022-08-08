@@ -31,7 +31,7 @@ class NewsActivity : AppCompatActivity() {
 
         val database = ArticleDatabase(this)
         val newsRepository = NewsRepository(db = database)
-        val viewModelProviderFactory = NewsViewModelProviderFactory(newsRepository)
+        val viewModelProviderFactory = NewsViewModelProviderFactory(application, newsRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
 
 
