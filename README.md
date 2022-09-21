@@ -1,5 +1,5 @@
 # MyNewsApp
-[![Android CI](https://github.com/AmitavSingh/MyNewsApp/actions/workflows/main.yml/badge.svg)](https://github.com/AmitavSingh/MyNewsApp/actions/workflows/main.yml)
+[![NewsApp CI](https://github.com/AmitavSingh/MyNewsApp/actions/workflows/main.yml/badge.svg)](https://github.com/AmitavSingh/MyNewsApp/actions/workflows/main.yml)
 
 This is a News App where you can read the news of your choice. You can save your favorites news item in your database also.
 
